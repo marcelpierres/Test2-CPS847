@@ -1,0 +1,9 @@
+BEGIN;
+--
+-- Add field owner to question
+--
+ALTER TABLE "polls_question" RENAME TO "polls_question__old";
+CREATE TABLE "polls_question" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "owner" varchar(50) NOT NULL, "questiontext" varchar(200)NOT NULL, "pubdate" datetime NOT NULL);
+INSERT INTO "polls_question" ("owner", "id", "pubdate", "questiontext") SELECT 'Anon', "id", "pubdate", "questiontext" FROM "polls_question__old";
+DROP TABLE "polls_question__old";
+COMMIT;

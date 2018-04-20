@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+   The Time is {{ today | date:'yyyy-MM-dd HH:mm a' }}
+  </h1>
+
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a routerLink="/about-us">About Us</a></h2>
+  </li>
+  <li>
+    <h2><a routerLink="/our-customers"> Our Customers</a></h2>
+  </li>
+  <li>
+    <h2><a routerLink="/our-services">Our Services</a></h2>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+
+<h2>Weather</h2>
+<app-our-weather></app-our-weather>
